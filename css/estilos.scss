@@ -1,0 +1,167 @@
+@import url(../css/estilos.css);
+
+@mixin item($bg-color, $hover-bg-size, $contrast) {
+    border: 2px solid #000;
+    background-image: url(../img/bakefondo.webp);
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.9s;
+    background-color: $bg-color;
+
+    &:hover {
+        background-size: $hover-bg-size;
+        filter: contrast($contrast);
+    }
+}
+
+.item {
+    @include item(#000, 125%, 100%);
+}
+
+$micolor1: rgb(198, 119, 243);
+$micolor2: rgb(181, 97, 250);
+$micolor3: rgb(155, 54, 250);
+
+@for $i from 1 through 3 {
+    .item#{$i} {
+        background-color: lighten($micolor1, $i * 10%);
+        background-image: url(../img/bakefondo.webp);
+    }
+}
+
+@for $i from 4 through 6 {
+    .item#{$i} {
+        background-color: lighten($micolor2, $i * 10%);
+        background-image: url(../img/bakefondo.webp);  
+    }
+}
+
+@for $i from 7 through 9 {
+    .item#{$i} {
+        background-color: lighten($micolor3, $i * 10%);
+        background-image: url(../img/bakefondo.webp);
+    }
+}
+
+.navbar {
+    background-color: rgb(255, 185, 255);
+    border-bottom: 3px solid;
+    text-align: end;
+
+    &-brand {
+        img {
+            height: 100px;
+        }
+    }
+
+    &-link {
+        color: #000000 !important;
+        font-weight: bolder;
+
+        &:hover {
+            color: rgb(255, 255, 255) !important;
+        }
+    }
+}
+
+h2 {
+    text-align: center;
+    background-color: blueviolet;
+    padding: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    margin-bottom: 0;
+}
+
+.articulo {
+    border: 3px solid #000;
+    text-align: center;
+    background-color: rgb(255, 185, 255);
+}
+
+.img-thumbnail {
+    max-width: 80%;
+    height: auto;
+    object-fit: cover;
+}
+
+h4 {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #000;
+    color: violet;
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        letter-spacing: 10px;
+    }
+}
+
+.row,
+.container-fluid {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.col-sm-12 {
+    font-size: 18px;
+    vertical-align: middle;
+    border: none;
+    border-bottom: 3px solid #000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    p {
+        padding-bottom: 60px;
+    }
+}
+
+.col-sm-4 {
+    font-size: 18px;
+}
+
+.col-md-7,
+.col-md-5 {
+    border-top: #000 solid 3px;
+    border-bottom: #000 solid 3px;
+
+    & p {
+        text-align: center;
+        margin-top: 25%;
+    }
+}
+
+.item {
+    border: 2px solid #000;
+    background-image: url(img/img1.webp);
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.9s;
+
+    &:hover {
+        background-size: 90%;
+        filter: contrast(100%);
+    }
+}
+
+$item-number: 9;
+
+@for $i from 1 through $item-number {
+    .item#{$i} {
+        background-color: rgb(198 - $i * 2, 119 - $i * 2, 243);
+        background-image: url(../img/bakefondo.webp);
+        filter: contrast(80%);
+    }
+}
+
+
